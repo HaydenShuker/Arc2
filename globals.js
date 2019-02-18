@@ -1,3 +1,12 @@
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+console.log(document.cookie);
+console.log(parseInt(getCookie("highScore")));
+
 var CanvasWidth = 1200
 var CanvasHight = 600
 
@@ -11,6 +20,11 @@ var score = 0
 var clearValue = 100
 var sideGoalValue = 50
 var highScore = 0
+var highScoreSubmitted = false;
+if (getCookie("highScore") !== undefined) {
+	highScore = parseInt(getCookie("highScore"));
+	highScoreSubmitted = true;
+}
 
 // level stats
 var clearCount = 0
