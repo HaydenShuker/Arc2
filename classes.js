@@ -108,6 +108,7 @@ function archTwo(){
 
 	if(score > highScore){
 		highScore = score
+		highScoreSubmitted = false;
 	}
 
 	if(goal.testPlayerC()){
